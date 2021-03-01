@@ -17,13 +17,11 @@ public class ImageAdapter extends BaseAdapter {
 
     Context context;
     String[] items;
-    String[] descriptions;
     int[] imageResources;
 
-    public ImageAdapter (Context context, String[] items, String[] descriptions, int[] imageResources) {
+    public ImageAdapter (Context context, String[] items, int[] imageResources) {
         this.context = context;
         this.items = items;
-        this.descriptions = descriptions;
         this.imageResources = imageResources;
     }
 
@@ -32,8 +30,7 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        Pair<String, String> soup = new Pair(items[position], descriptions[position]);
-        return soup;
+        return items[position];
     }
 
     @Override
@@ -44,39 +41,34 @@ public class ImageAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        TextView soupName, soupDescription;
+        TextView soupName;
 
         LinearLayout linearLayout;
 
         if(convertView == null) {
             linearLayout = new LinearLayout(context);
             soupName = new TextView(context);
-            soupDescription = new TextView(context);
 
             linearLayout.setOrientation(LinearLayout.HORIZONTAL);
             linearLayout.addView(soupName);
-            linearLayout.addView(soupDescription);
 
             soupName.setTextSize(20);
             soupName.setPadding(30, 30,15,0);
-            soupDescription.setPadding(15, 30,15,30);
             linearLayout.setGravity(Gravity.CENTER_HORIZONTAL);
 
         } else {
             linearLayout = (LinearLayout) convertView;
             soupName = (TextView) linearLayout.getChildAt(0);
-            soupDescription = (TextView) linearLayout.getChildAt(1);
             linearLayout.setGravity(Gravity.CENTER_HORIZONTAL);
 
         }
         soupName.setText(items[position]);
-        soupDescription.setText(descriptions[position]);
 
         return linearLayout;
     }
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        TextView soupName, soupDescription;
+        TextView soupName;
         ImageView imageView;
 
         LinearLayout linearLayout;
@@ -84,17 +76,14 @@ public class ImageAdapter extends BaseAdapter {
         if(convertView == null) {
             linearLayout = new LinearLayout(context);
             soupName = new TextView(context);
-            soupDescription = new TextView(context);
             imageView = new ImageView(context);
 
             linearLayout.setOrientation(LinearLayout.HORIZONTAL);
             linearLayout.addView(imageView);
             linearLayout.addView(soupName);
-            linearLayout.addView(soupDescription);
 
             soupName.setTextSize(15);
             soupName.setPadding(15, 30,15,0);
-            soupDescription.setPadding(15, 30,15,30);
 
 
             imageView.getLayoutParams().height = 150;
@@ -104,7 +93,6 @@ public class ImageAdapter extends BaseAdapter {
             linearLayout = (LinearLayout) convertView;
             imageView = (ImageView) linearLayout.getChildAt(0);
             soupName = (TextView) linearLayout.getChildAt(1);
-            soupDescription = (TextView) linearLayout.getChildAt(2);
         }
         if(position > 0) {
             imageView.setImageResource(imageResources[position - 1]);
@@ -112,7 +100,6 @@ public class ImageAdapter extends BaseAdapter {
             imageView.setImageResource(android.R.color.transparent);
         }
         soupName.setText(items[position]);
-        soupDescription.setText(descriptions[position]);
 
         return linearLayout;
     }

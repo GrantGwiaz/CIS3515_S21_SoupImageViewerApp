@@ -17,7 +17,6 @@ public class SelectionActivity extends AppCompatActivity {
 
     int[] soupImagesArray;
     String[] soupArray;
-    String[] descriptionArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +28,22 @@ public class SelectionActivity extends AppCompatActivity {
 
         //declare and populate arrays for each for our items, their descriptions, and images of them to be displayed
         soupArray = new String[]{"Please select a Soup","Gazpacho", "French Onion Soup", "Chowder", "Tomato Soup"};
-        descriptionArray = new String[]{ "" ," - a cold soup of raw blended vegetables", " - beef stock and onion base, covered with cheese and bread",
-                " - a rich soup typically containing fish", " - pretty much just tomatoes"};
         soupImagesArray = new int[]{R.drawable.gazpacho , R.drawable.french_onion , R.drawable.chowder , R.drawable.tomato};
         // all this is better as an object class as to encapsulate, but since won't be reusing or maintaining this its unnecessary
 
 
-        ImageAdapter adapter = new ImageAdapter(this, soupArray, descriptionArray, soupImagesArray);
+        ImageAdapter adapter = new ImageAdapter(this, soupArray, soupImagesArray);
         spinner.setAdapter(adapter);
 
         //spinner listener
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position != 0) {
+                if(position > 0) {
                     Intent intent = new Intent(SelectionActivity.this, DisplayActivity.class);
-                    intent.putExtra("soupImagesArray", soupImagesArray);
+                    intent.putExtra("Image", soupImagesArray[position-1]);
                     startActivity(intent);
+                    spinner.setSelection(0);
                 }
             }
             @Override
