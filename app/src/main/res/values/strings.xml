@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Soup Image Viewer App</string>
+    <string name="selection_act_name">Soup Selector</string>
+    <string name="display_act_name">Display</string>
+</resources>
