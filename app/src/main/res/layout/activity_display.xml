@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".DisplayActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="349dp"
+        android:layout_height="247dp"
+        android:layout_marginTop="280dp"
+        android:contentDescription="@string/soupImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
