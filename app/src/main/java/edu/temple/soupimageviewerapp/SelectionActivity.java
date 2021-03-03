@@ -12,11 +12,11 @@ import android.widget.Toast;
 
 public class SelectionActivity extends AppCompatActivity {
 
-    Spinner spinner;
+    private Spinner spinner;
 
 
-    int[] soupImagesArray;
-    String[] soupArray;
+    private int[] soupImagesArray;
+    private String[] soupArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class SelectionActivity extends AppCompatActivity {
                 if(position > 0) {
                     Intent intent = new Intent(SelectionActivity.this, DisplayActivity.class);
                     intent.putExtra("Image", soupImagesArray[position-1]);
+                    intent.putExtra("Name", soupArray[position]);
                     startActivity(intent);
                     spinner.setSelection(0);
                 }

@@ -15,9 +15,9 @@ import java.util.ArrayList;
 
 public class ImageAdapter extends BaseAdapter {
 
-    Context context;
-    String[] items;
-    int[] imageResources;
+    private Context context;
+    private String[] items;
+    private int[] imageResources;
 
     public ImageAdapter (Context context, String[] items, int[] imageResources) {
         this.context = context;
