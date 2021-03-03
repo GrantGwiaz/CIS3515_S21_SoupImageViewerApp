@@ -2,6 +2,7 @@ package edu.temple.soupimageviewerapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +29,9 @@ public class DisplayActivity extends AppCompatActivity {
         int image = extras.getInt("Image");
 
         textView.setText(name);
+        textView.setTextSize(30);
+        textView.setGravity(Gravity.CENTER_HORIZONTAL);
+
         imageView.setImageResource(image);
     }
 }
