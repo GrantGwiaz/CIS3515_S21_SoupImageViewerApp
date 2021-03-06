@@ -43,65 +43,35 @@ public class ImageAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         TextView soupName;
-
+        ImageView soupPicture;
         FrameLayout frameLayout;
 
         if(convertView == null) {
-            linearLayout = new LinearLayout(context);
-            soupName = new TextView(context);
-
-            linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-            linearLayout.addView(soupName);
-
-            soupName.setTextSize(20);
-            soupName.setPadding(30, 30,15,0);
-            linearLayout.setGravity(Gravity.CENTER_HORIZONTAL);
-
-        } else {
-            linearLayout = (LinearLayout) convertView;
-            soupName = (TextView) linearLayout.getChildAt(0);
-            linearLayout.setGravity(Gravity.CENTER_HORIZONTAL);
-
+            soupPicture = new ImageView(context);
+            //soupPicture.setLayoutParams(85,85);
+            soupPicture.setAdjustViewBounds(true);
+            soupPicture.setPadding(8,8,8,8);
         }
+        else  {
+            soupPicture = (ImageView) convertView;
+        }
+
+        /*
+        frameLayout = new FrameLayout(context);
+        soupName = new TextView(context);
+        soupPicture = new ImageView(context);
+
+        frameLayout.addView(soupPicture);
+        frameLayout.addView(soupName);
+
+        soupName.setTextSize(20);
+        soupName.setPadding(8,8,8,8);
+
+
+
         soupName.setText(items[position]);
-
-        return linearLayout;
-    }
-    @Override
-    public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        TextView soupName;
-        ImageView imageView;
-
-        LinearLayout linearLayout;
-
-        if(convertView == null) {
-            linearLayout = new LinearLayout(context);
-            soupName = new TextView(context);
-            imageView = new ImageView(context);
-
-            linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-            linearLayout.addView(imageView);
-            linearLayout.addView(soupName);
-
-            soupName.setTextSize(15);
-            soupName.setPadding(15, 30,15,0);
-
-
-            imageView.getLayoutParams().height = 150;
-            imageView.getLayoutParams().width = 150;
-
-        } else {
-            linearLayout = (LinearLayout) convertView;
-            imageView = (ImageView) linearLayout.getChildAt(0);
-            soupName = (TextView) linearLayout.getChildAt(1);
-        }
-        if(position > 0) {
-            imageView.setImageResource(imageResources[position - 1]);
-        } else {
-            imageView.setImageResource(android.R.color.transparent);
-        }
-        soupName.setText(items[position]);
-
-        return linearLayout;
+         */
+        soupPicture.setImageResource(imageResources[position]);
+        return soupPicture;
     }
 }
