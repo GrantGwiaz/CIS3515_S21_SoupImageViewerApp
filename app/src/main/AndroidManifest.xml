@@ -3,24 +3,26 @@
     package="edu.temple.soupimageviewerapp">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="Soup Image Selector"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SoupImageViewerApp">
-        <activity
-            android:name=".DisplayActivity"
-            android:label="@string/display_act_name" >
-        </activity>
+
         <activity
             android:name=".SelectionActivity"
-            android:label="@string/selection_act_name" >
-            <intent-filter>
+            android:label="@string/app_name">
+            <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".DisplayActivity"
+            android:label="@string/display_act_name" >
         </activity>
     </application>
 
