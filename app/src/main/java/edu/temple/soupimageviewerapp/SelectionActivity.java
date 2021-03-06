@@ -20,9 +20,11 @@ public class SelectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.setTitle(getResources().getString(R.string.selection_act_name));
         // get our views so we can use them
         spinner = findViewById(R.id.spinner);
 
