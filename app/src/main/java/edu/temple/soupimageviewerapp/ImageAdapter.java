@@ -8,8 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 
@@ -43,7 +44,7 @@ public class ImageAdapter extends BaseAdapter {
 
         TextView soupName;
 
-        LinearLayout linearLayout;
+        FrameLayout frameLayout;
 
         if(convertView == null) {
             linearLayout = new LinearLayout(context);
