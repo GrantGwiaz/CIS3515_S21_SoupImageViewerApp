@@ -6,12 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".SelectionActivity">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+    <TextView
+        android:id="@+id/InstructionsTextView"
+        android:layout_width="359dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/instructions"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <GridView
+        android:id="@+id/GridView"
+        android:layout_width="414dp"
+        android:layout_height="612dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InstructionsTextView"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
