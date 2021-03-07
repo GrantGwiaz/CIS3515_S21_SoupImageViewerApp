@@ -1,15 +1,9 @@
 # CIS3515_S21_SoupImageViewerApp
 
 This app impments two activites, one for selecting an image of soup, the other to display it.
-It has a created Icon, as seen in the first screenshot. When started it starts on the Soup Select activity and prompts
-the user to select a soup.
-When a soup is selected it, display activity is opened and a soup is drawn. When back is hit it returns to the main
-selctor activity and prompts the user to select again.
+It uses a grid with greyed images of the soup with the name over them as the selector.
+Upon clicking one of the soups/name, a new activity opens with the name of the soup and an ungreyed image of it bellow.
 
-![image](https://user-images.githubusercontent.com/61506873/109452197-34003080-7a1d-11eb-9598-75496d83dd69.png)
+![image](https://user-images.githubusercontent.com/61506873/110230788-71633300-7ee1-11eb-8d46-2cb3627b9604.png)
 
-![image](https://user-images.githubusercontent.com/61506873/109452189-2e0a4f80-7a1d-11eb-8b82-69bebe8b3d04.png)
-
-![image](https://user-images.githubusercontent.com/61506873/109452210-3cf10200-7a1d-11eb-92ef-8640cc7efdd7.png)
-
-![image](https://user-images.githubusercontent.com/61506873/109452217-45493d00-7a1d-11eb-8402-0bc9e40167ef.png)
+![image](https://user-images.githubusercontent.com/61506873/110230790-7a540480-7ee1-11eb-8756-59a6f0da0880.png)
