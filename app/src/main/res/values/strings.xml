@@ -3,5 +3,5 @@
     <string name="selection_act_name">Soup Selector</string>
     <string name="display_act_name">Display</string>
     <string name="soupImage">Image of a Soup</string>
-    <string name="instructions">Select A Thing</string>
+    <string name="instructions">Select A Soup</string>
 </resources>
