@@ -1,6 +1,8 @@
 package edu.temple.soupimageviewerapp;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.media.Image;
 import android.util.Pair;
 import android.view.Gravity;
@@ -9,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.FrameLayout;
 
@@ -47,31 +50,27 @@ public class ImageAdapter extends BaseAdapter {
         FrameLayout frameLayout;
 
         if(convertView == null) {
+            frameLayout = new FrameLayout(context);
             soupPicture = new ImageView(context);
-            //soupPicture.setLayoutParams(85,85);
+            soupName = new TextView(context);
+            frameLayout.addView(soupPicture);
+            frameLayout.addView(soupName);
             soupPicture.setAdjustViewBounds(true);
             soupPicture.setPadding(8,8,8,8);
         }
         else  {
-            soupPicture = (ImageView) convertView;
+            frameLayout = (FrameLayout) convertView;
+            soupPicture = (ImageView) frameLayout.getChildAt(0);
+            soupName = (TextView) frameLayout.getChildAt(1);
         }
 
-        /*
-        frameLayout = new FrameLayout(context);
-        soupName = new TextView(context);
-        soupPicture = new ImageView(context);
-
-        frameLayout.addView(soupPicture);
-        frameLayout.addView(soupName);
-
-        soupName.setTextSize(20);
-        soupName.setPadding(8,8,8,8);
-
-
-
-        soupName.setText(items[position]);
-         */
         soupPicture.setImageResource(imageResources[position]);
-        return soupPicture;
+        soupName.setText(items[position]);
+        soupName.setGravity(Gravity.CENTER);
+        soupName.setTextColor(Color.WHITE);
+        soupName.setTextAppearance(R.style.TextShadow);
+        soupPicture.setColorFilter(Color.argb(130, 255, 255, 255));
+
+        return frameLayout;
     }
 }
