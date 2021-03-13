@@ -25,7 +25,7 @@ public class SelectionActivity extends AppCompatActivity {
         // get our views so we can use them
 
         //declare and populate arrays for each for our items, their descriptions, and images of them to be displayed
-        soupArray = new String[]{"Gazpacho", "French Onion Soup", "Chowder", "Tomato Soup"};
+        soupArray = getResources().getStringArray(R.array.soups_array);
         soupImagesArray = new int[]{R.drawable.gazpacho , R.drawable.french_onion , R.drawable.chowder , R.drawable.tomato};
         // all this is better as an object class as to encapsulate, but since won't be reusing or maintaining this its unnecessary
 
