@@ -4,4 +4,11 @@
     <string name="display_act_name">Display</string>
     <string name="soupImage">Image of a Soup</string>
     <string name="instructions">Select A Soup</string>
+
+    <string-array name="soups_array">
+        <item>Gazpacho</item>
+        <item>French Onion Soup</item>
+        <item>Chowder</item>
+        <item>Tomato Soup</item>
+    </string-array>
 </resources>
