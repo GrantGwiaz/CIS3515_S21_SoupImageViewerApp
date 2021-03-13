@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Prévoir de la soupe</string>
+    <string name="selection_act_name">Sélecteur de soupe</string>
+    <string name="display_act_name">Écran</string>
+    <string name="soupImage">Image d\'une soupe</string>
+    <string name="instructions">Sélectionnez une soupe</string>
+
+    <string-array name="soups_array">
+        <item>Gaspacho</item>
+        <item>Soupe à l\'oignon française</item>
+        <item>Chaudrée</item>
+        <item>Soupe à la tomate</item>
+    </string-array>
+
+</resources>
